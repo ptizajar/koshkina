@@ -1,0 +1,2 @@
+C:\Users\Sveta\Source\Repos\koshkina\game\x64\Debug\game.exe
+C:\Users\Sveta\Source\Repos\koshkina\game\x64\Debug\game.pdb
