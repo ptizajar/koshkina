@@ -61,7 +61,7 @@ int processMove(int currentLocation, int choice) {
 		else if (choice == 2) {
 			cout << "You haven't been noted in journal\n";
 			lives--;
-			cout << "You've loosed a life\nYou have" << lives << " lives left";
+			cout << "You've loosed a life\nYou have " << lives << " lives left\n";
 			return 6;
 		}
 		else {
