@@ -1,2 +1,5 @@
 ﻿  add.cpp
+  main.cpp
+  Generating Code...
+C:\Users\Sveta\Source\Repos\koshkina\game\add.cpp(40): warning C4715: 'processMove': not all control paths return a value
   game.vcxproj -> C:\Users\Sveta\Source\Repos\koshkina\game\x64\Debug\game.exe

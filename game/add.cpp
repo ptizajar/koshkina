@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 #include "add.h"
+#include <stdlib.h>
 
 int lives = 3;
-int current_location = 1;
 int* inventory = new int[2]{ 0,0 };
 
 void displayInventory() {
@@ -19,30 +19,34 @@ void displayInventory() {
 }
 
 void displayIntro() {
-	cout << "Welcome to console game bout common student's life!\nIn this game you have to choose one of the actions using numbers\nHave fun!";
-
+	cout << "Welcome to console game bout common student's life!\nIn this game you have to choose one of the actions using numbers\nBe careful, you have only 3 lives!\nHave fun!";
 }
+
+int processMove(int currentLocation, int choose) {
+	switch (currentLocation) {
+	case 1:
+		if (choose == 1) {
+			return 2;
+		}
+		else if (choose == 2) {
+			lives--;
+			cout << "You've loosed a life";
+			return 4;
+		}
+		else {
+			exit(0);
+		}
+	}
+}
+
 
 void displayCurrentLocation(int locationIndex) {
 	switch (locationIndex) {
 	case 1:
-		int choose;
 		cout << "You have waken up. What are you choosing?\n1 - go to college\n2 - continue to sleep\n";
-		cin >> choose;
-		if (choose == 1) {
-			displayCurrentLocation(2);
-		}
-		else if (choose == 2) {
-			lives--;
-			cout << "Most students decided the same.Teacher has written a report. So you have to go to second lesson\n";
-			displayCurrentLocation(4);
-		}
-		else { cout << "Unknown choose"; }
 		break;
 	case 2:
-		int choose;
 		cout << "Design lesson\nWhat are you choosing?\n1 - play cards on computer\n2 - work in figma\n";
-		cin >> choose;
 		break;
 	case 3:
 		cout << "PE lesson\nWhat are you choosing?\n1 - run\n2 - hide in dressing room";
@@ -72,5 +76,12 @@ void displayCurrentLocation(int locationIndex) {
 		cout << "Last lesson. You're tired\nWhat are you choosing?\n1 - go home\n2 - stay";
 		break;
 	}
-
+	int choose;
+	cin >> choose;
+	int nextLocation = processMove(locationIndex, choose);
+	if (!lives) {
+		cout << "You've lost all your lives!\nGAME OVER!!!";
+		exit(0);
+	}
+	displayCurrentLocation(nextLocation);
 }
