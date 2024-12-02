@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 using namespace std;
 #include "add.h"
 #include <stdlib.h>
@@ -181,6 +181,7 @@ int processMove(int currentLocation, int choice) {
 	case 11:
 		if (choice == 1) {
 			cout << "You're home. Another day has passed. 4 months of days like this are ahead\n";
+			delete[] inventory;
 			exit(0);
 		}
 		else if (choice == 2) {
@@ -189,9 +190,11 @@ int processMove(int currentLocation, int choice) {
 			cout << "You've loosed a life\nYou have " << lives << " lives left\n";
 			if (!lives) {
 				cout << "You've lost all your lives!\nGAME OVER!!!";
+				delete[] inventory;
 				exit(0);
 			}
 			cout << "You're home. Another day has passed. 4 months of days like this are ahead\n";
+			delete[] inventory;
 			exit(0);
 		}
 		else {
@@ -216,7 +219,7 @@ void displayCurrentLocation(int locationIndex) {
 		cout << "PE lesson\nWhat are you choosing?\n1 - to run\n2 - to hide in dressing room\n";
 		break;
 	case 4:
-		cout << "Second lesson\nWhat are you choosing?\n1 - be on time\n2 - be late\n";
+		cout << "PE lesson\nWhat are you choosing?\n1 - be on time\n2 - be late\n";
 		break;
 	case 5:
 		cout << "You have found 50 rubles on the ground\nWhat are you choosing?\n1 - take\n2 - leave on the ground\n";
@@ -242,10 +245,11 @@ void displayCurrentLocation(int locationIndex) {
 	}
 	int choose;
 	cin >> choose;
-	int nextLocation = processMove(locationIndex, choose);
+	int nextLocation = processMove(locationIndex, choose);//функция обработки выбора игрока, возвращается номер следующей локации
 	if (!lives) {
 		cout << "You've lost all your lives!\nGAME OVER!!!";
+		delete[] inventory;
 		exit(0);
 	}
-	displayCurrentLocation(nextLocation);
+	displayCurrentLocation(nextLocation);//рекурсивный вызов функции с новой локацией
 }

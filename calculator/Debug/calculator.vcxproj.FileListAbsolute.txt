@@ -1,0 +1,2 @@
+C:\Users\Sveta\Source\Repos\koshkina\calculator\Debug\calculator.exe
+C:\Users\Sveta\Source\Repos\koshkina\calculator\Debug\calculator.pdb
