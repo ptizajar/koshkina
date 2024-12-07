@@ -5,7 +5,7 @@
 class Theatre {
 public:
 	Theatre();
-	Theatre(Window** Windows, int quantityWindows, IEmployee** stuff, int quantityStuff);
+	Theatre(Window** windows, int quantityWindows, IEmployee** stuff, int quantityStuff);
 	~Theatre();
 	Window** getWindows();
 	void setQuantityWindows(int quantityWindows);
