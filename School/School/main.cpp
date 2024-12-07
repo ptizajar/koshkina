@@ -54,6 +54,4 @@ int main()
 	firstWeek->displayWeek();
 	std::cout <<std::endl;
 	kids->displayClass();
-	std::cout << std::endl;
-	nikita->displayPerson();
 }
