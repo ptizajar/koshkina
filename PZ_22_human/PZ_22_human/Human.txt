@@ -1,0 +1,19 @@
+Human name: r
+Human surname: r
+Human age: 3
+Human weight: 3
+Human height: 3
+Human job: r
+Human name: r
+Human surname: r
+Human age: 3
+Human weight: 3
+Human height: 13
+Human school: r
+Name: r
+Surname: r
+Age: 3
+Weight: 3
+Height: 3
+School: r
+Job: r
